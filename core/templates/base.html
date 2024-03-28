@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>Loja virtual do Bruce</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{% url 'index' %}">
+            <img src="{% static 'img/foto.png' %}" style="max-height: 70px;">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'produto:list_produto' %}">
+              <button class="button is-focused is-link is-light">Produto</button>
+            </a>
+      
+            <a class="navbar-item" href="{% url 'entrada:list_entrada' %}">
+              <button class="button is-focused is-link is-light">Entrada</button>
+            </a>
+            
+            <a class="navbar-item" href="{% url 'saida:list_saida' %}">
+              <button class="button is-danger is-focused is-light">Saída</button>
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  About
+                </a>
+                <a class="navbar-item">
+                  Jobs
+                </a>
+                <a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-warning">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-success">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="box">
+        <h3 class="title is-3">Loja do Bruce</h3>
+        <div class="container">
+          <div class="notification">
+            {% block product %}{% endblock %}
+          </div>  
+        </div>
+    
+    
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Trabalho de prog 2</strong> linkedIn no Nome <a href="https://www.linkedin.com/in/bruce-henrique-de-moraes-moreira-193185232/">Bruce Henrique</a>. Clique no link a seguir para o GitHub
+          <a href="https://github.com/BruceHMoraes?tab=repositories">Meu GitHub</a>.
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
